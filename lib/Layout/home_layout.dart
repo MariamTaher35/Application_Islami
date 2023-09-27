@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:app_2/modules/hadeth/hadeth.dart';
 import 'package:app_2/modules/quran/quran.dart';
 import 'package:app_2/modules/radio/radio.dart';
 import 'package:app_2/modules/sebha/sebha.dart';
 import 'package:app_2/modules/setting/setting.dart';
+import 'package:flutter/material.dart';
 
 class HomeLayout extends StatefulWidget {
   HomeLayout({super.key});
@@ -27,22 +27,10 @@ class _HomeLayoutState extends State<HomeLayout> {
               fit: BoxFit.cover)),
       child: Scaffold(
         appBar: AppBar(
-          title: Text("إسلامي"),
+          title: Text("Islami"),
         ),
         body: screens[selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Color(0xFFB7935F),
-          type: BottomNavigationBarType.fixed,
-          selectedIconTheme: IconThemeData(
-            color: Colors.black,
-            size: 32,
-          ),
-          selectedItemColor: Colors.black,
-          unselectedIconTheme: IconThemeData(
-            color: Colors.white,
-            size: 28,
-          ),
-          unselectedItemColor: Colors.white,
           onTap: (int index) {
             setState(() {
               selectedIndex = index;
@@ -52,17 +40,18 @@ class _HomeLayoutState extends State<HomeLayout> {
           items: [
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/moshaf.png")),
-                label: "قرآن"),
+                label: "Quran"),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/hadeth.png")),
-                label: "أحاديث"),
+                label: "Hadeth"),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/sebha.png")),
-                label: "سبحة"),
+                label: "Sebha"),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/radio.png")),
-                label: "راديوا"),
-            BottomNavigationBarItem(icon: Icon(Icons.settings), label: "تعديل"),
+                label: "Radio"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), label: "Setting"),
           ],
         ),
       ),

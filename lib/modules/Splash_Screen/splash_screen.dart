@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:app_2/Layout/home_layout.dart';
+import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
   static const String routeName = "Splash_Screen";
