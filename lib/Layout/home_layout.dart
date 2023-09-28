@@ -1,4 +1,4 @@
-import 'package:app_2/modules/hadeth/hadeth.dart';
+import 'package:app_2/modules/hadeth/hadeth_view.dart';
 import 'package:app_2/modules/quran/quran.dart';
 import 'package:app_2/modules/radio/radio.dart';
 import 'package:app_2/modules/sebha/sebha.dart';
@@ -16,7 +16,13 @@ class HomeLayout extends StatefulWidget {
 
 class _HomeLayoutState extends State<HomeLayout> {
   int selectedIndex = 0;
-  List<Widget> screens = [Quran(), Hadeth(), Sebha(), RadioApp(), Setting()];
+  List<Widget> screens = [
+    Quran(),
+    HadethView(),
+    Sebha(),
+    RadioApp(),
+    Setting()
+  ];
 
   @override
   Widget build(BuildContext context) {
