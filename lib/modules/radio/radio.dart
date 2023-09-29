@@ -21,11 +21,10 @@ class RadioApp extends StatelessWidget {
               style: them.textTheme.bodyMedium,
             ),
             SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 130,
-              ),
+            Container(
+              width: double.infinity,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
                     Icons.play_arrow_rounded,

@@ -21,7 +21,7 @@ class _QuranDetailsState extends State<QuranDetails> {
     var theme = Theme.of(context);
     var arg = ModalRoute.of(context)?.settings.arguments as SuraDetail;
     // asynchronous
-    if (content.isEmpty) readFiles(arg.surenumber);
+    if (lines.isEmpty) readFiles(arg.surenumber);
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
@@ -74,11 +74,10 @@ class _QuranDetailsState extends State<QuranDetails> {
                     content,
                     textAlign: TextAlign.center,
                     style: theme.textTheme.bodySmall,
-                  ),
+                ),
                 ),
               )
-            ],
-          ),
+            ]),
         ),
       ),
     );
@@ -86,6 +85,7 @@ class _QuranDetailsState extends State<QuranDetails> {
 
   readFiles(String index) async {
     String text = await rootBundle.loadString("assets/files/$index.txt");
+
     content = text;
     setState(() {
       lines = content.split("\n");
