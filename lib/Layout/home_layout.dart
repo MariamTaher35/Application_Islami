@@ -4,6 +4,7 @@ import 'package:app_2/modules/radio/radio.dart';
 import 'package:app_2/modules/sebha/sebha.dart';
 import 'package:app_2/modules/setting/setting.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeLayout extends StatefulWidget {
   HomeLayout({super.key});
@@ -21,7 +22,7 @@ class _HomeLayoutState extends State<HomeLayout> {
     HadethView(),
     Sebha(),
     RadioApp(),
-    Setting()
+    SettingView()
   ];
 
   @override
@@ -33,7 +34,7 @@ class _HomeLayoutState extends State<HomeLayout> {
               fit: BoxFit.cover)),
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Islami"),
+          title: Text(AppLocalizations.of(context)!.islami),
         ),
         body: screens[selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
@@ -46,18 +47,21 @@ class _HomeLayoutState extends State<HomeLayout> {
           items: [
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/moshaf.png")),
-                label: "Quran"),
+                label: AppLocalizations.of(context)!.quran),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/hadeth.png")),
-                label: "Hadeth"),
+                label: AppLocalizations.of(context)!.hadeth),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/sebha.png")),
-                label: "Sebha"),
+                label: AppLocalizations.of(context)!.tasbeh),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/radio.png")),
-                label: "Radio"),
+                label: AppLocalizations.of(context)!.radio),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: "Setting"),
+                icon: Icon(
+                  Icons.settings,
+                ),
+                label: AppLocalizations.of(context)!.setting),
           ],
         ),
       ),
