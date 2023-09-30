@@ -47,10 +47,10 @@ class _HadethDetailsState extends State<HadethDetails> {
               Text(
                 arg.title,
                 style: theme.textTheme.bodyLarge!
-                    .copyWith(color: theme.colorScheme.onSecondary),
+                    .copyWith(color: theme.colorScheme.onPrimary),
               ),
               Divider(
-                color: theme.colorScheme.onSecondary,
+                color: theme.colorScheme.onPrimary,
                 indent: 30,
                 endIndent: 30,
                 thickness: 1.2,
@@ -62,7 +62,7 @@ class _HadethDetailsState extends State<HadethDetails> {
                     arg.content,
                     textAlign: TextAlign.center,
                     style: theme.textTheme.bodySmall!
-                        .copyWith(color: theme.colorScheme.onSecondary),
+                        .copyWith(color: theme.colorScheme.onPrimary),
                   ),
                 ]),
               )

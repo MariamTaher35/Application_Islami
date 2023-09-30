@@ -53,7 +53,7 @@ class _QuranDetailsState extends State<QuranDetails> {
                     Text(
                       "  سورة${arg.suraname}",
                   style: theme.textTheme.bodyLarge!
-                      .copyWith(color: theme.colorScheme.onSecondary),
+                      .copyWith(color: theme.colorScheme.onPrimary),
                 ),
                     SizedBox(
                       width: 4,
@@ -61,7 +61,7 @@ class _QuranDetailsState extends State<QuranDetails> {
                     Icon(
                       Icons.play_circle,
                   size: 32,
-                  color: theme.colorScheme.onSecondary,
+                  color: theme.colorScheme.onPrimary,
                 )
                   ],
                 ),
@@ -79,7 +79,7 @@ class _QuranDetailsState extends State<QuranDetails> {
                   content,
                   textAlign: TextAlign.center,
                   style: theme.textTheme.bodySmall!.copyWith(
-                      color: theme.colorScheme.onSecondary, height: 1.5),
+                      color: theme.colorScheme.onPrimary, height: 1.5),
                 ),
               ]),
             )

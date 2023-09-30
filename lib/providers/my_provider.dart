@@ -31,4 +31,12 @@ class MyProvider extends ChangeNotifier {
         ? "assets/images/splash_dark.png"
         : "assets/images/splash_image.png";
   }
+
+  String headsabha() {
+    return isDark() ? " assets/images/head_dark.png" : "assets/images/head.png";
+  }
+
+  String boadysabha() {
+    return isDark() ? "assets/images/body_dark.png" : "assets/images/body.png";
+  }
 }

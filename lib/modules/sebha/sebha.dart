@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/my_provider.dart';
 
 class Sebha extends StatefulWidget {
   Sebha({super.key});
@@ -22,6 +25,8 @@ class _SebhaState extends State<Sebha> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var them = Theme.of(context);
+    var sabha = Provider.of<MyProvider>(context);
+
     return Container(
       color: Colors.transparent,
       height: double.infinity,
@@ -33,12 +38,14 @@ class _SebhaState extends State<Sebha> {
           children: [
             Stack(
               children: [
-                Positioned(
-                    left: size.width * .28,
-                    child: Image.asset(
-                      "assets/images/head.png",
-                      width: 70,
-                    )),
+                Container(
+                  child: Positioned(
+                      left: size.width * .28,
+                      child: Image.asset(
+                        sabha.headsabha(),
+                        width: 70,
+                      )),
+                ),
                 Padding(
                   padding: const EdgeInsets.only(top: 75),
                   child: InkWell(
@@ -48,7 +55,7 @@ class _SebhaState extends State<Sebha> {
                       child: Transform.rotate(
                           angle: angle,
                           child: Image.asset(
-                            "assets/images/body.png",
+                            sabha.boadysabha(),
                             width: 200,
                           ))),
                 ),
@@ -69,7 +76,7 @@ class _SebhaState extends State<Sebha> {
                 height: 75,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
-                  color: Color(0xFFB7935F).withOpacity(0.57),
+                  color: them.colorScheme.primary.withOpacity(0.57),
                 ),
                 child: Text("$counter"),
               ),
@@ -82,11 +89,12 @@ class _SebhaState extends State<Sebha> {
                 height: 51,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
-                  color: Color(0xFFB7935F),
+                  color: them.colorScheme.secondary,
                 ),
                 child: Text(
                   "${askar[currentIndex]}",
-                  style: them.textTheme.bodySmall,
+                  style: them.textTheme.bodySmall!
+                      .copyWith(color: them.colorScheme.onSurface),
                 ),
               ),
             ),

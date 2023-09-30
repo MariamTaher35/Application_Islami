@@ -29,12 +29,12 @@ class RadioApp extends StatelessWidget {
                   Icon(
                     Icons.play_arrow_rounded,
                     size: 50,
-                    color: them.primaryColor,
+                    color: them.colorScheme.secondary,
                   ),
                   Icon(
                     Icons.pause,
                     size: 50,
-                    color: them.primaryColor,
+                    color: them.colorScheme.secondary,
                   )
                 ],
               ),
