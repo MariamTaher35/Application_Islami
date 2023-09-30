@@ -133,7 +133,7 @@ class Quran extends StatelessWidget {
         ),
         Divider(
           thickness: 1.2,
-          color: theme.colorScheme.onSecondary,
+          color: theme.colorScheme.secondary,
           indent: 10,
           endIndent: 10,
           height: 5,
@@ -149,7 +149,7 @@ class Quran extends StatelessWidget {
             Container(
               width: 1.2,
               height: 45,
-              color: theme.colorScheme.onSecondary,
+              color: theme.colorScheme.secondary,
             ),
             Expanded(
                 child: Text(
@@ -161,7 +161,7 @@ class Quran extends StatelessWidget {
         ),
         Divider(
           thickness: 1.2,
-          color: theme.colorScheme.onSecondary,
+          color: theme.colorScheme.secondary,
           indent: 10,
           endIndent: 10,
           height: 5,

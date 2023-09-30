@@ -41,7 +41,7 @@ class _SettingViewState extends State<SettingView> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: theme.colorScheme.onSecondary,
+                    color: theme.colorScheme.secondary,
                     width: 2.2,
                   )),
               child: Row(
@@ -50,7 +50,7 @@ class _SettingViewState extends State<SettingView> {
                   Text(provider.local == "en" ? "English" : "عربي"),
                   Icon(
                     Icons.arrow_drop_down_sharp,
-                    color: theme.colorScheme.onSecondary,
+                    color: theme.colorScheme.secondary,
                   )
                 ],
               ),
@@ -76,7 +76,7 @@ class _SettingViewState extends State<SettingView> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: theme.colorScheme.onSecondary,
+                    color: theme.colorScheme.secondary,
                     width: 2.2,
                   )),
               child: Row(
@@ -85,10 +85,16 @@ class _SettingViewState extends State<SettingView> {
                   Text(provider.currenttheme == ThemeMode.dark &&
                           provider.local == "en"
                       ? "Dark"
-                      : "ليلي"),
+                      : provider.currenttheme == ThemeMode.light &&
+                              provider.local == "en"
+                          ? "Light"
+                          : provider.currenttheme == ThemeMode.dark &&
+                                  provider.local == "ar"
+                              ? "ليلي"
+                              : "نهاري"),
                   Icon(
                     Icons.arrow_drop_down_sharp,
-                    color: theme.colorScheme.onSecondary,
+                    color: theme.colorScheme.secondary,
                   )
                 ],
               ),

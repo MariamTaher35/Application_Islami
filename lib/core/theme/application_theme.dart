@@ -7,8 +7,8 @@ class ApplicationTheme extends StatelessWidget {
       colorScheme: ColorScheme(
           brightness: Brightness.light,
           primary: Color(0xFFB7935F),
-          onPrimary: Colors.black54,
-          secondary: Colors.blue,
+          onPrimary: Colors.black,
+          secondary: Color(0xFFB7935F),
           onSecondary: Colors.white,
           error: Colors.red,
           onError: Colors.white,
@@ -52,10 +52,12 @@ class ApplicationTheme extends StatelessWidget {
   static ThemeData darkTheme = ThemeData(
       primaryColor: Color(0xFF141A2E),
       colorScheme: ColorScheme.fromSeed(
-        primary: Color(0xFF141A2E),
-        seedColor: Color(0xFF141A2E),
-        onSecondary: Color(0xFFFACC1D),
-      ),
+          primary: Color(0xFF141A2E),
+          onPrimary: Color(0xFFFACC1D),
+          seedColor: Color(0xFF141A2E),
+          secondary: Color(0xFFFACC1D),
+          onSecondary: Color(0xFFFACC1D),
+          onSurface: Colors.black),
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: AppBarTheme(
           iconTheme: IconThemeData(color: Colors.white),
