@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../providers/my_provider.dart';
 import 'hadeth_view.dart';
 
 class HadethDetails extends StatefulWidget {
@@ -20,12 +22,11 @@ class _HadethDetailsState extends State<HadethDetails> {
     var madiaquery = MediaQuery.of(context).size;
     var theme = Theme.of(context);
     var arg = ModalRoute.of(context)?.settings.arguments as HadethContent;
-
+    var detail = Provider.of<MyProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/background_light.png"),
-              fit: BoxFit.cover)),
+              image: AssetImage(detail.Background()), fit: BoxFit.cover)),
       child: Scaffold(
         appBar: AppBar(
             title: Text(
@@ -38,30 +39,32 @@ class _HadethDetailsState extends State<HadethDetails> {
           width: madiaquery.width,
           height: madiaquery.height,
           decoration: BoxDecoration(
-            color: Color(0xFFF8F8F8).withOpacity(0.8),
+            color: theme.colorScheme.primary.withOpacity(0.8),
             borderRadius: BorderRadius.circular(25),
           ),
           child: Column(
             children: [
               Text(
                 arg.title,
-                style: theme.textTheme.bodyLarge,
+                style: theme.textTheme.bodyLarge!
+                    .copyWith(color: theme.colorScheme.onSecondary),
               ),
               Divider(
-                color: theme.primaryColor,
+                color: theme.colorScheme.onSecondary,
                 indent: 30,
                 endIndent: 30,
                 thickness: 1.2,
                 height: 5,
               ),
               Expanded(
-                child: ListView.builder(
-                  itemBuilder: (context, index) => Text(
+                child: ListView(children: [
+                  Text(
                     arg.content,
                     textAlign: TextAlign.center,
-                    style: theme.textTheme.bodySmall,
+                    style: theme.textTheme.bodySmall!
+                        .copyWith(color: theme.colorScheme.onSecondary),
                   ),
-                ),
+                ]),
               )
             ],
           ),

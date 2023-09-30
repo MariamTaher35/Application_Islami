@@ -20,6 +20,7 @@ class MyApplication extends StatelessWidget {
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
     return MaterialApp(
+      themeMode: provider.currenttheme,
       theme: ApplicationTheme.lightTheme,
       darkTheme: ApplicationTheme.darkTheme,
       localizationsDelegates: AppLocalizations.localizationsDelegates,

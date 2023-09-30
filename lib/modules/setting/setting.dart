@@ -1,6 +1,10 @@
 import 'package:app_2/bottom_sheets/show_language_bottomsheet.dart';
+import 'package:app_2/bottom_sheets/show_theme_bottomsheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/my_provider.dart';
 
 class SettingView extends StatefulWidget {
   const SettingView({super.key});
@@ -14,6 +18,7 @@ class _SettingViewState extends State<SettingView> {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     var mediaQuery = MediaQuery.of(context).size;
+    var provider = Provider.of<MyProvider>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 20),
       child: Column(
@@ -36,12 +41,18 @@ class _SettingViewState extends State<SettingView> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: theme.primaryColor,
+                    color: theme.colorScheme.onSecondary,
                     width: 2.2,
                   )),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Text("English"), Icon(Icons.arrow_drop_down_sharp)],
+                children: [
+                  Text(provider.local == "en" ? "English" : "عربي"),
+                  Icon(
+                    Icons.arrow_drop_down_sharp,
+                    color: theme.colorScheme.onSecondary,
+                  )
+                ],
               ),
             ),
           ),
@@ -65,12 +76,21 @@ class _SettingViewState extends State<SettingView> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: theme.primaryColor,
+                    color: theme.colorScheme.onSecondary,
                     width: 2.2,
                   )),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Text("Dark"), Icon(Icons.arrow_drop_down_sharp)],
+                children: [
+                  Text(provider.currenttheme == ThemeMode.dark &&
+                          provider.local == "en"
+                      ? "Dark"
+                      : "ليلي"),
+                  Icon(
+                    Icons.arrow_drop_down_sharp,
+                    color: theme.colorScheme.onSecondary,
+                  )
+                ],
               ),
             ),
           )
@@ -100,8 +120,6 @@ class _SettingViewState extends State<SettingView> {
               topLeft: Radius.circular(18),
               topRight: Radius.circular(18),
             )),
-        builder: (context) => Container(
-              height: MediaQuery.of(context).size.height * .6,
-            ));
+        builder: (context) => ThemeBottomSheet());
   }
 }

@@ -3,8 +3,10 @@ import 'package:app_2/modules/quran/quran.dart';
 import 'package:app_2/modules/radio/radio.dart';
 import 'package:app_2/modules/sebha/sebha.dart';
 import 'package:app_2/modules/setting/setting.dart';
+import 'package:app_2/providers/my_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class HomeLayout extends StatefulWidget {
   HomeLayout({super.key});
@@ -27,11 +29,11 @@ class _HomeLayoutState extends State<HomeLayout> {
 
   @override
   Widget build(BuildContext context) {
+    var appprovider = Provider.of<MyProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/background_light.png"),
-              fit: BoxFit.cover)),
+              image: AssetImage(appprovider.Background()), fit: BoxFit.cover)),
       child: Scaffold(
         appBar: AppBar(
           title: Text(AppLocalizations.of(context)!.islami),

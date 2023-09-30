@@ -28,7 +28,7 @@ class _HadethViewState extends State<HadethView> {
           thickness: 1.5,
           endIndent: 10,
           indent: 10,
-          color: theme.primaryColor,
+          color: theme.colorScheme.onSecondary,
           height: 10,
         ),
         Text(
@@ -39,7 +39,7 @@ class _HadethViewState extends State<HadethView> {
           thickness: 1.5,
           endIndent: 10,
           indent: 10,
-          color: theme.primaryColor,
+          color: theme.colorScheme.onSecondary,
           height: 10,
         ),
         Expanded(
@@ -61,7 +61,7 @@ class _HadethViewState extends State<HadethView> {
               thickness: 1.5,
               endIndent: 80,
               indent: 80,
-              color: theme.primaryColor,
+              color: theme.colorScheme.onSecondary,
               height: 10,
             ),
           ),
