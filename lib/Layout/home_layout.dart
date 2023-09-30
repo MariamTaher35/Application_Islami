@@ -1,9 +1,12 @@
-import 'package:app_2/modules/hadeth/hadeth.dart';
+import 'package:app_2/modules/hadeth/hadeth_view.dart';
 import 'package:app_2/modules/quran/quran.dart';
 import 'package:app_2/modules/radio/radio.dart';
 import 'package:app_2/modules/sebha/sebha.dart';
 import 'package:app_2/modules/setting/setting.dart';
+import 'package:app_2/providers/my_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class HomeLayout extends StatefulWidget {
   HomeLayout({super.key});
@@ -16,18 +19,24 @@ class HomeLayout extends StatefulWidget {
 
 class _HomeLayoutState extends State<HomeLayout> {
   int selectedIndex = 0;
-  List<Widget> screens = [Quran(), Hadeth(), Sebha(), RadioApp(), Setting()];
+  List<Widget> screens = [
+    Quran(),
+    HadethView(),
+    Sebha(),
+    RadioApp(),
+    SettingView()
+  ];
 
   @override
   Widget build(BuildContext context) {
+    var appprovider = Provider.of<MyProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/background_light.png"),
-              fit: BoxFit.cover)),
+              image: AssetImage(appprovider.Background()), fit: BoxFit.cover)),
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Islami"),
+          title: Text(AppLocalizations.of(context)!.islami),
         ),
         body: screens[selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
@@ -40,18 +49,21 @@ class _HomeLayoutState extends State<HomeLayout> {
           items: [
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/moshaf.png")),
-                label: "Quran"),
+                label: AppLocalizations.of(context)!.quran),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/hadeth.png")),
-                label: "Hadeth"),
+                label: AppLocalizations.of(context)!.hadeth),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/sebha.png")),
-                label: "Sebha"),
+                label: AppLocalizations.of(context)!.tasbeh),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/radio.png")),
-                label: "Radio"),
+                label: AppLocalizations.of(context)!.radio),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: "Setting"),
+                icon: Icon(
+                  Icons.settings,
+                ),
+                label: AppLocalizations.of(context)!.setting),
           ],
         ),
       ),
