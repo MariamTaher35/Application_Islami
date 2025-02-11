@@ -33,7 +33,7 @@ class MyProvider extends ChangeNotifier {
   }
 
   String headsabha() {
-    return isDark() ? " assets/images/head_dark.png" : "assets/images/head.png";
+    return isDark() ? "assets/images/head_dark.png" : "assets/images/head.png";
   }
 
   String boadysabha() {
