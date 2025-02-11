@@ -1,6 +1,5 @@
 import 'package:app_2/modules/hadeth/hadeth_view.dart';
 import 'package:app_2/modules/quran/quran.dart';
-import 'package:app_2/modules/radio/radio.dart';
 import 'package:app_2/modules/sebha/sebha.dart';
 import 'package:app_2/modules/setting/setting.dart';
 import 'package:app_2/providers/my_provider.dart';
@@ -23,7 +22,6 @@ class _HomeLayoutState extends State<HomeLayout> {
     Quran(),
     HadethView(),
     Sebha(),
-    RadioApp(),
     SettingView()
   ];
 
@@ -56,9 +54,6 @@ class _HomeLayoutState extends State<HomeLayout> {
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/sebha.png")),
                 label: AppLocalizations.of(context)!.tasbeh),
-            BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/radio.png")),
-                label: AppLocalizations.of(context)!.radio),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.settings,
