@@ -1,16 +1,62 @@
-# app_2
+# Islami Application
 
-A new Flutter project.
+A comprehensive Islamic application developed using Flutter, enabling users to read the Quran, perform Tashbih (digital prayer beads), and access authenticated Hadith collections.
 
-## Getting Started
+## 🎥 Demo
 
-This project is a starting point for a Flutter application.
+> **Note**: GitHub READMEs cannot directly play videos hosted on Google Drive. Please click the banner below to watch the demo.
 
-A few resources to get you started if this is your first Flutter project:
+<h3 align="center">
+  <a href="https://drive.google.com/file/d/1kZNDDu_HeGbsyrrW2otr_YCFsvCcTN3v/view?usp=sharing">▶️ Click Here to Watch My Graduation Project Video</a>
+</h3>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## ✨ Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Quran Reading**: Read the Holy Quran with a clean and user-friendly interface.
+- **Digital Tashbih**: Perform Tashbih using digital prayer beads for easy counting.
+- **Hadith Collections**: Access authenticated Hadith collections.
+- **Bilingual Interface**: Seamless switching between Arabic and English languages.
+- **Theme Customization**: Customizable operational light and dark theme options for enhanced user accessibility and comfort.
+- **Efficient Content**: Utilizes structured text files for efficient content retrieval and display.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Flutter](https://flutter.dev/)
+- **State Management**: [Provider](https://pub.dev/packages/provider)
+- **Languages**: Dart
+- **Localization**: `flutter_localizations` & `intl`
+- **Fonts**: [Google Fonts](https://pub.dev/packages/google_fonts)
+
+## 🚀 Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) installed on your machine.
+- An IDE (VS Code, Android Studio, etc.) with Flutter extensions.
+
+### Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/your-username/your-repo-name.git
+    ```
+2.  **Navigate to the project directory**
+    ```bash
+    cd Application_Islami
+    ```
+3.  **Install dependencies**
+    ```bash
+    flutter pub get
+    ```
+4.  **Run the application**
+    ```bash
+    flutter run
+    ```
+
+## 📂 Project Structure
+
+The project uses a structured assets folder for managing resources:
+- `assets/images/`: Contains image assets.
+- `assets/files/`: Contains text files for content (Quran/Hadith).
