@@ -2,10 +2,13 @@
 
 A comprehensive Islamic application developed using Flutter, enabling users to read the Quran, perform Tashbih (digital prayer beads), and access authenticated Hadith collections.
 
-## 📱 Demo
+## 🎥 Demo
 
-Check out the demo video for the application here:
-[**View Demo Video**](https://drive.google.com/file/d/1kZNDDu_HeGbsyrrW2otr_YCFsvCcTN3v/view?usp=sharing)
+> **Note**: GitHub READMEs cannot directly play videos hosted on Google Drive. Please click the banner below to watch the demo.
+
+<h3 align="center">
+  <a href="https://drive.google.com/file/d/1kZNDDu_HeGbsyrrW2otr_YCFsvCcTN3v/view?usp=sharing">▶️ Click Here to Watch My Graduation Project Video</a>
+</h3>
 
 ## ✨ Features
 
@@ -57,5 +60,4 @@ To get a local copy up and running, follow these simple steps.
 The project uses a structured assets folder for managing resources:
 - `assets/images/`: Contains image assets.
 - `assets/files/`: Contains text files for content (Quran/Hadith).
-
 
